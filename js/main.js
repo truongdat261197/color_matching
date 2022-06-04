@@ -12,16 +12,14 @@ let timer = createTimer({
 })
 
 function handleTimerChange(second) {
-    console.log('change', second);
-
     setTimerText(second);
 }
 
 function handleTimerFinish() {
-    console.log('finished');
     // end game
     gameStatus = GAME_STATUS.FINISHED;
     setTimerText('Game over!');
+    showPlayAgainButton();
 }
 
 
