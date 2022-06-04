@@ -18,7 +18,7 @@ function handleTimerChange(second) {
 function handleTimerFinish() {
     // end game
     gameStatus = GAME_STATUS.FINISHED;
-    setTimerText('Game over!');
+    setTimerText('Game over 😭');
     showPlayAgainButton();
 }
 
