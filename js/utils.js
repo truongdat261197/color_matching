@@ -1,4 +1,4 @@
-import { getPlayAgainButton, getTimerElement } from "./selector.js";
+import { getPlayAgainButton, getTimerElement, getColorBackground } from "./selector.js";
 
 // trộn màu lại
 function shuffle(arr) {
@@ -79,4 +79,9 @@ export function createTimer({ seconds, onChange, onFinish}) {
         start,
         clear,
     }
+}
+
+export function setBackgroundColor(color) {
+    const backgroundElement = getColorBackground()
+    if (backgroundElement) backgroundElement.style.backgroundColor = color
 }

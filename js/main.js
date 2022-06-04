@@ -1,6 +1,6 @@
 import { GAME_STATUS, GAME_TIME, PAIRS_COUNT } from './constants.js'
 import { getColorElementList, getColorListElement, getInActiveColorList, getPlayAgainButton } from './selector.js';
-import { getRandomColorPairs, hidePlayAgainButton, setTimerText, showPlayAgainButton, createTimer } from './utils.js';
+import { getRandomColorPairs, hidePlayAgainButton, setTimerText, showPlayAgainButton, createTimer, setBackgroundColor } from './utils.js';
 
 // Global variables
 let selections = [];
@@ -49,6 +49,9 @@ function handleColorClick(liElement) {
     const isMatch = firstColor === secondColor;
 
     if (isMatch) {
+        // can use either first or second color (as they are the same)
+        setBackgroundColor(firstColor)
+        
         // check win
         const isWin = getInActiveColorList().length === 0;
         if (isWin) {
@@ -122,6 +125,9 @@ function resetGame() {
 
     // re-generate new colors
     initColors();
+
+    // reset background color
+    setBackgroundColor('goldenrod');
 
     // startTimer
     startTimer();
